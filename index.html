@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kelly’s Spring Cottage</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#f5f1ea" />
+
+  <!-- iOS PWA support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Spring Cottage">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- HEADER -->
+    <header class="app-header">
+      <h1 id="header-title">Good morning, Kelly 🌷</h1>
+      <p id="header-subtitle">Today doesn’t need perfection—just peace.</p>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+      <!-- Views will be injected here -->
+    </main>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+      <button data-view="home" class="nav-btn active">🏡<span>Home</span></button>
+      <button data-view="daily" class="nav-btn">🌿<span>Daily</span></button>
+      <button data-view="weekly" class="nav-btn">📅<span>Weekly</span></button>
+      <button data-view="selfcare" class="nav-btn">💛<span>Self-Care</span></button>
+      <button data-view="creative" class="nav-btn">🎨<span>Creative</span></button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>
